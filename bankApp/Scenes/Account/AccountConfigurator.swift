@@ -20,17 +20,17 @@ final class DefaultAccountConfigurator: AccountConfigurator {
     @discardableResult
     func configured(_ vc: AccountViewController) -> AccountViewController {
         sceneFactory.accountConfigurator = self
-        let service = DefaultAuthService(
+        let service = DefaultUserDataService(
             networkManager: DefaultNetworkManager(session: MockNetworkSession())
         )
-        let authWorker = LoginWorker(service: service)
+        let accountRepository = AccountRepository(service: service)
         let interactor = AccountInteractor()
         let presenter = AccountPresenter()
         let router = LoginRouter(sceneFactory: sceneFactory)
         router.source = vc
         presenter.viewController = vc
         interactor.presenter = presenter
-        interactor.authWorker = authWorker
+        interactor.accountRepository = accountRepository
         vc.interactor = interactor
         vc.router = router
         return vc

@@ -19,15 +19,18 @@
 		3689B6E8263533D60016C03B /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B6E7263533D60016C03B /* LoginRouter.swift */; };
 		3689B6ED263533EC0016C03B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B6EC263533EC0016C03B /* LoginPresenter.swift */; };
 		3689B6F2263534090016C03B /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B6F1263534090016C03B /* LoginInteractor.swift */; };
-		3689B6F7263534150016C03B /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B6F6263534150016C03B /* LoginWorker.swift */; };
 		3689B6FD2635355B0016C03B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B6FC2635355B0016C03B /* AuthService.swift */; };
 		3689B704263536500016C03B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B703263536500016C03B /* NetworkManager.swift */; };
 		3689B70C263536830016C03B /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B70B263536830016C03B /* NetworkSession.swift */; };
 		3689B71226353E110016C03B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B71126353E110016C03B /* User.swift */; };
+		36AEB47A26706EEE009907C4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AEB47926706EEE009907C4 /* LoginRepository.swift */; };
+		36AEB47F26707143009907C4 /* UserData.json in Resources */ = {isa = PBXBuildFile; fileRef = 36AEB47E26707143009907C4 /* UserData.json */; };
+		36AEB48426707592009907C4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AEB48326707592009907C4 /* UserService.swift */; };
+		36AEB491267081A1009907C4 /* UserAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AEB490267081A1009907C4 /* UserAccountData.swift */; };
+		36AEB4992670EA31009907C4 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AEB4982670EA31009907C4 /* AccountRepository.swift */; };
 		36BD30402635FF0A00710B12 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD303F2635FF0A00710B12 /* AccountViewController.swift */; };
 		36BD30452635FF1800710B12 /* AccountConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD30442635FF1800710B12 /* AccountConfigurator.swift */; };
 		36BD304A2635FF2400710B12 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD30492635FF2400710B12 /* AccountRouter.swift */; };
-		36BD304F2635FF3D00710B12 /* AccountWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD304E2635FF3D00710B12 /* AccountWorker.swift */; };
 		36BD30542635FF4D00710B12 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD30532635FF4D00710B12 /* AccountPresenter.swift */; };
 		36BD30592635FF5C00710B12 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD30582635FF5C00710B12 /* AccountInteractor.swift */; };
 		36BD305F2636374F00710B12 /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD305E2636374F00710B12 /* StatementTableViewCell.swift */; };
@@ -75,15 +78,18 @@
 		3689B6E7263533D60016C03B /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		3689B6EC263533EC0016C03B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		3689B6F1263534090016C03B /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		3689B6F6263534150016C03B /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
 		3689B6FC2635355B0016C03B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		3689B703263536500016C03B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3689B70B263536830016C03B /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		3689B71126353E110016C03B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		36AEB47926706EEE009907C4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		36AEB47E26707143009907C4 /* UserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserData.json; sourceTree = "<group>"; };
+		36AEB48326707592009907C4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		36AEB490267081A1009907C4 /* UserAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountData.swift; sourceTree = "<group>"; };
+		36AEB4982670EA31009907C4 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		36BD303F2635FF0A00710B12 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		36BD30442635FF1800710B12 /* AccountConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountConfigurator.swift; sourceTree = "<group>"; };
 		36BD30492635FF2400710B12 /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
-		36BD304E2635FF3D00710B12 /* AccountWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountWorker.swift; sourceTree = "<group>"; };
 		36BD30532635FF4D00710B12 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		36BD30582635FF5C00710B12 /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
 		36BD305E2636374F00710B12 /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				3689B6A026351B840016C03B /* Assets.xcassets */,
 				3689B6A226351B840016C03B /* LaunchScreen.storyboard */,
 				3689B6A526351B840016C03B /* Info.plist */,
+				36AEB47E26707143009907C4 /* UserData.json */,
 			);
 			path = bankApp;
 			sourceTree = "<group>";
@@ -207,7 +214,7 @@
 				3689B6E7263533D60016C03B /* LoginRouter.swift */,
 				3689B6EC263533EC0016C03B /* LoginPresenter.swift */,
 				3689B6F1263534090016C03B /* LoginInteractor.swift */,
-				3689B6F6263534150016C03B /* LoginWorker.swift */,
+				36AEB47926706EEE009907C4 /* LoginRepository.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				3689B6FC2635355B0016C03B /* AuthService.swift */,
+				36AEB48326707592009907C4 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -241,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				3689B71126353E110016C03B /* User.swift */,
+				36AEB490267081A1009907C4 /* UserAccountData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,9 +261,9 @@
 				36BD303F2635FF0A00710B12 /* AccountViewController.swift */,
 				36BD30442635FF1800710B12 /* AccountConfigurator.swift */,
 				36BD30492635FF2400710B12 /* AccountRouter.swift */,
-				36BD304E2635FF3D00710B12 /* AccountWorker.swift */,
 				36BD30532635FF4D00710B12 /* AccountPresenter.swift */,
 				36BD30582635FF5C00710B12 /* AccountInteractor.swift */,
+				36AEB4982670EA31009907C4 /* AccountRepository.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -388,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36AEB47F26707143009907C4 /* UserData.json in Resources */,
 				3689B6A426351B840016C03B /* LaunchScreen.storyboard in Resources */,
 				3689B6A126351B840016C03B /* Assets.xcassets in Resources */,
 			);
@@ -523,17 +533,19 @@
 				36BD305F2636374F00710B12 /* StatementTableViewCell.swift in Sources */,
 				3689B69826351B820016C03B /* AppDelegate.swift in Sources */,
 				36BD30542635FF4D00710B12 /* AccountPresenter.swift in Sources */,
+				36AEB48426707592009907C4 /* UserService.swift in Sources */,
 				3689B6ED263533EC0016C03B /* LoginPresenter.swift in Sources */,
 				3689B6E8263533D60016C03B /* LoginRouter.swift in Sources */,
 				3689B704263536500016C03B /* NetworkManager.swift in Sources */,
-				36BD304F2635FF3D00710B12 /* AccountWorker.swift in Sources */,
+				36AEB491267081A1009907C4 /* UserAccountData.swift in Sources */,
 				3689B6F2263534090016C03B /* LoginInteractor.swift in Sources */,
-				3689B6F7263534150016C03B /* LoginWorker.swift in Sources */,
 				36BD30452635FF1800710B12 /* AccountConfigurator.swift in Sources */,
 				3689B69A26351B820016C03B /* SceneDelegate.swift in Sources */,
+				36AEB4992670EA31009907C4 /* AccountRepository.swift in Sources */,
 				3689B6FD2635355B0016C03B /* AuthService.swift in Sources */,
 				36BD30592635FF5C00710B12 /* AccountInteractor.swift in Sources */,
 				36BD304A2635FF2400710B12 /* AccountRouter.swift in Sources */,
+				36AEB47A26706EEE009907C4 /* LoginRepository.swift in Sources */,
 				3689B70C263536830016C03B /* NetworkSession.swift in Sources */,
 				3689B6E3263533290016C03B /* LoginConfigurator.swift in Sources */,
 				3689B6DE26352F630016C03B /* SceneFactory.swift in Sources */,

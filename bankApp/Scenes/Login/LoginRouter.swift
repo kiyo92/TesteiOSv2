@@ -9,7 +9,6 @@ import UIKit
 
 protocol LoginRouting {
     func showLoginSuccess()
-    func showLogingFailure(message: String)
 }
 
 class LoginRouter {
@@ -23,18 +22,9 @@ class LoginRouter {
 }
 
 extension LoginRouter: LoginRouting {
-    func showLogingFailure(message: String) {
-        let action = UIAlertAction(title: "OK", style: .destructive)
-        let alertController
-            = UIAlertController(title: "Login Failure",
-                                message: message,
-                                preferredStyle: .alert)
-        alertController.addAction(action)
-        source?.present(alertController, animated: true)
-    }
     
     func showLoginSuccess() {
-        let scene = sceneFactory.makeLoginScene()
+        let scene = sceneFactory.makeAccountScene()
         source?.navigationController?.pushViewController(scene, animated: true)
     }
 }

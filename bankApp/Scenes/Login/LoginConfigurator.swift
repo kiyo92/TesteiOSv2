@@ -23,14 +23,14 @@ final class DefaultLoginConfigurator: LoginConfigurator {
         let service = DefaultAuthService(
             networkManager: DefaultNetworkManager(session: MockNetworkSession())
         )
-        let authWorker = LoginWorker(service: service)
+        let authRepository = LoginRepository(service: service)
         let interactor = LoginInteractor()
         let presenter = LoginPresenter()
         let router = LoginRouter(sceneFactory: sceneFactory)
         router.source = vc
         presenter.viewController = vc
         interactor.presenter = presenter
-        interactor.authWorker = authWorker
+        interactor.authRepository = authRepository
         vc.interactor = interactor
         vc.router = router
         return vc

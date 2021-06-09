@@ -9,19 +9,19 @@ import Foundation
 import UIKit
 import SnapKit
 protocol AccountViewControllerInput: AnyObject {
-    func showLogingSuccess(fullUserName: String)
-    func showLogingFailure(message: String)
+    func showUserDataSuccess(user: UserAccountData)
+    func showUserDataFailure(message: String)
 }
 
 protocol AccountViewControllerOutput: AnyObject {
-    func tryToLogIn()
+    func getUserData()
 }
 
 class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var interactor: AccountInteractorInput?
     var router: LoginRouting?
-    
+    var transactions: [TransactionData] = []
     
     private var accountInfoContainer: UIView = {
         let view = UIView(frame: CGRect.zero)
@@ -93,10 +93,11 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
+        interactor?.getUserData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return transactions.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -107,6 +108,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "statementCell", for: indexPath) as! StatementTableViewCell
         
         cell.setup()
+        cell.setData(transaction: transactions[indexPath.row])
         
         return cell
     }
@@ -169,34 +171,20 @@ private extension AccountViewController {
         }
         
     }
-    /*
-    func setupLoginButton() {
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(loginButton)
-        
-        loginButton.snp.makeConstraints(){make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin).inset(33)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(202)
-            make.height.equalTo(62)
-        }
-        
-        loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
-    }
-    */
-    @objc func loginButtonAction() {
-        interactor?.tryToLogIn()
-    }
+    
 }
 
 extension AccountViewController: AccountViewControllerInput {
-    func showLogingSuccess(fullUserName: String) {
-        //logger.info("logged: \(fullUserName)")
-        router?.showLoginSuccess()
+    func showUserDataSuccess(user: UserAccountData) {
+        holderNameLabel.text = user.user?.name
+        accountDataLabel.text = "\(user.account?.agency ?? "") / \(user.account?.accountNumber ?? "")"
+        balanceDataLabel.text = "R$ \(user.account?.accountBalance ?? 0)"
+        transactions = user.transactions ?? []
+        tableView.reloadData()
     }
     
-    func showLogingFailure(message: String) {
+    func showUserDataFailure(message: String) {
         //logger.error("login failure: \(message)")
-        router?.showLogingFailure(message: message)
+        //router?.showLogingFailure(message: message)
     }
 }

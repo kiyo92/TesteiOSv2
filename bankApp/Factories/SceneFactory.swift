@@ -15,7 +15,6 @@ protocol SceneFactory {
 }
 
 final class DefaultSceneFactory: SceneFactory {
-    
     var configurator: LoginConfigurator!
     
     func makeLoginScene() -> UIViewController {
@@ -26,6 +25,10 @@ final class DefaultSceneFactory: SceneFactory {
     var accountConfigurator: AccountConfigurator!
     
     func makeAccountScene() -> UIViewController {
+        let sceneFactory = DefaultSceneFactory()
+        
+        accountConfigurator = DefaultAccountConfigurator(sceneFactory: sceneFactory)
+        
         let vc = AccountViewController()
         return accountConfigurator.configured(vc)
     }

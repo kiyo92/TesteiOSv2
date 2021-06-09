@@ -56,6 +56,13 @@ class StatementTableViewCell: UITableViewCell {
         return label
     }()
     
+    func setData(transaction: TransactionData){
+        self.transactionTypeLabel.text = transaction.type
+        self.transactionDescriptionLabel.text  = transaction.description
+        self.transactionDateLabel.text  = transaction.date
+        self.transactionValueLabel.text  = String(transaction.value ?? 0)
+    }
+    
     func setup(){
         
         contentView.addSubview(accountInfoContainer)

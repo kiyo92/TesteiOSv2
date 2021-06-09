@@ -9,25 +9,22 @@ import Foundation
 typealias AccountInteractorInput = AccountViewControllerOutput
 
 protocol AccountInteractorOutput: AnyObject {
-    func showLogingSuccess(user: User)
-    func showLogingFailure(message: String)
+    func showUserDataSuccess(user: UserAccountData)
+    func showUserDataFailure(message: String)
 }
 
 final class AccountInteractor {
     var presenter: AccountPresenterInput?
-    var authWorker: LoginAuth?
+    var accountRepository: AccountRepository?
 }
 
 extension AccountInteractor: AccountInteractorInput {
-    func tryToLogIn() {
-        authWorker?.makeAuth(completion: { result in
+    func getUserData() {
+        accountRepository?.getUserData(completion: { result in
             DispatchQueue.main.async { [weak self] in
-                switch result {
-                case .success(let data):
-                    self?.presenter?.showLogingSuccess(user: data)
-                case .failure(let error):
-                    self?.presenter?.showLogingFailure(message: error.localizedDescription)
-                }
+                print(result.user?.name)
+                self?.presenter?.showUserDataSuccess(user: result)
+                
             }
         })
     }

@@ -15,6 +15,8 @@ final class AccountPresenter {
 }
 
 extension AccountPresenter: AccountPresenterInput {
+    
+    
     func showLogingFailure(message: String) {
         dispatchPrecondition(condition: .onQueue(.main))
         let errorMessage: String
@@ -25,15 +27,16 @@ extension AccountPresenter: AccountPresenterInput {
         errorMessage = ""
         #endif
         
-        viewController?.showLogingFailure(message: """
-            Oops, something failed on our side :(
-            \(message)
-            """)
+        
     }
     
-    func showLogingSuccess(user: User) {
+    func showUserDataSuccess(user: UserAccountData) {
         dispatchPrecondition(condition: .onQueue(.main))
-        viewController?.showLogingSuccess(fullUserName: user.firstName + " " + user.lastName)
+        viewController?.showUserDataSuccess(user: user)
+    }
+    
+    func showUserDataFailure(message: String) {
+        viewController?.showUserDataFailure(message: "Oops, something failed on our side :(\(message))")
     }
  
 }

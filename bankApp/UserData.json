@@ -1,0 +1,44 @@
+{
+    "user" : {
+        "name": "João Marcus Dionisio",
+    },
+    "account" : {
+        "agency": "1020",
+        "accountNumber": "20903-0",
+        "accountBalance" : 1250.00,
+        
+    },
+    "transactions" : [
+        {
+            "type" : "Pagamento",
+            "value" : 200.00,
+            "description" : "Eletrobrás Energia",
+            "date" : "2021-06-08 16:00:00"
+        },
+        {
+            "type" : "Pix Recebido",
+            "value" : 450.00,
+            "description" : "Recebido de Vanessa",
+            "date" : "2021-06-08 17:25:00"
+        },
+        {
+            "type" : "Pix Enviado",
+            "value" : 100.00,
+            "description" : "Enviado para Pedro",
+            "date" : "2021-06-08 17:30:00"
+        },
+        {
+            "type" : "Pagamento",
+            "value" : 750.00,
+            "description" : "Cartão de crédito",
+            "date" : "2021-06-08 18:00:00"
+        },
+        {
+            "type" : "Pix Recebido",
+            "value" : 500.00,
+            "description" : "Recebido de Agatha",
+            "date" : "2021-06-08 17:25:00"
+        }
+        
+    ]
+}

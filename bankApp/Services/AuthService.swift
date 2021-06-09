@@ -7,8 +7,9 @@
 
 import Foundation
 import Combine
+
 protocol AuthService {
-    func auth() -> AnyPublisher<DefaultAuthService.Response, Error>
+    func auth() -> User
 }
 
 struct DefaultAuthService: AuthService {
@@ -32,9 +33,9 @@ struct DefaultAuthService: AuthService {
         self.networkManager = networkManager
     }
     
-    func auth() -> AnyPublisher<Response, Error> {
-        networkManager.publisher(
-            for: URLRequest(url: URL(string: "nothttps://netguru.com/api/authMeInPlease")!)
-        )
+    func auth() -> User {
+        let user = User(firstName: "João", lastName: "Marcus")
+        
+        return user
     }
 }

@@ -33,7 +33,7 @@ extension LoginPresenter: LoginPresenterInput {
     
     func showLogingSuccess(user: User) {
         dispatchPrecondition(condition: .onQueue(.main))
-        viewController?.showLogingSuccess(fullUserName: user.firstName + " " + user.lastName)
+        viewController?.showLogingSuccess(username: user.firstName + " " + user.lastName)
     }
  
 }

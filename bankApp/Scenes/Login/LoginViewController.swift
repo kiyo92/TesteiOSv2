@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 protocol LoginViewControllerInput: AnyObject {
-    func showLogingSuccess(fullUserName: String)
+    func showLogingSuccess(username: String)
     func showLogingFailure(message: String)
 }
 
@@ -120,20 +120,22 @@ private extension LoginViewController {
     
     @objc func loginButtonAction() {
         interactor?.tryToLogIn()
-        let sceneFactory = DefaultSceneFactory()
-        sceneFactory.accountConfigurator = DefaultAccountConfigurator(sceneFactory: sceneFactory)
-        navigationController?.pushViewController(sceneFactory.makeAccountScene(), animated: false)
+        
     }
 }
 
 extension LoginViewController: LoginViewControllerInput {
-    func showLogingSuccess(fullUserName: String) {
-        //logger.info("logged: \(fullUserName)")
+    func showLogingSuccess(username: String) {
+        print("logged: \(username)")
         router?.showLoginSuccess()
     }
     
     func showLogingFailure(message: String) {
-        //logger.error("login failure: \(message)")
-        router?.showLogingFailure(message: message)
+        let action = UIAlertAction(title: "OK", style: .destructive)
+        let alertController = UIAlertController(title: "Login Failure",
+                                message: message,
+                                preferredStyle: .alert)
+        alertController.addAction(action)
+        present(alertController, animated: true)
     }
 }

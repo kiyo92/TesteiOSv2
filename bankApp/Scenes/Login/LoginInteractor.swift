@@ -16,19 +16,15 @@ protocol LoginInteractorOutput: AnyObject {
 
 final class LoginInteractor {
     var presenter: LoginPresenterInput?
-    var authWorker: LoginAuth?
+    var authRepository: LoginAuth?
 }
 
 extension LoginInteractor: LoginInteractorInput {
     func tryToLogIn() {
-        authWorker?.makeAuth(completion: { result in
+        authRepository?.makeAuth(completion: { result in
             DispatchQueue.main.async { [weak self] in
-                switch result {
-                case .success(let data):
-                    self?.presenter?.showLogingSuccess(user: data)
-                case .failure(let error):
-                    self?.presenter?.showLogingFailure(message: error.localizedDescription)
-                }
+                self?.presenter?.showLogingSuccess(user: result)
+                
             }
         })
     }
